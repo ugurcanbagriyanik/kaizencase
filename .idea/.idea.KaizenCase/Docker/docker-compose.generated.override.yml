@@ -1,0 +1,29 @@
+# This is a generated file. Not intended for manual editing.
+services:
+  kaizencase:
+    build:
+      context: "C:\\Users\\ugurcan\\RiderProjects\\KaizenCase"
+      dockerfile: "Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "/riderDebugger/linux-x64/dotnet/dotnet"
+    - "/riderDebugger/JetBrains.Debugger.Worker.exe"
+    - "--mode=server"
+    - "--frontend-port=57100"
+    - "--backend-port=57300"
+    environment:
+      RIDER_DEBUGGER_LOG_DIR: "/riderLogs"
+      RESHARPER_LOG_CONF: "/riderLogsConf/backend-log.xml"
+    image: "ugurcanbagriyanik/kaizencase:dev"
+    ports:
+    - "57007:57100"
+    - "57207:57300"
+    volumes:
+    - "C:\\Users\\ugurcan\\RiderProjects\\KaizenCase:/app:rw"
+    - "C:\\Users\\ugurcan\\AppData\\Local\\JetBrains\\RiderRemoteDebugger\\2023.1\\\
+      Linux64:/riderDebugger"
+    - "C:\\Program Files\\JetBrains\\JetBrains Rider 2021.3.4/bin:/riderLogsConf"
+    - "C:\\Users\\ugurcan\\AppData\\Local\\JetBrains\\Rider2023.1\\log\\DebuggerWorker\\\
+      JetBrains.Debugger.Worker.2023_4_30_23_35_22:/riderLogs:rw"
+    working_dir: "/app"

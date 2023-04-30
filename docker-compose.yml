@@ -1,0 +1,17 @@
+﻿services:
+  kaizencase:
+    #networks:
+    #    - isolation-network
+
+    image: ugurcanbagriyanik/kaizencase
+    ports:
+      - "8000:80"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      - CreatedCodeCount=0
+      - SecretStartValue=12121
+
