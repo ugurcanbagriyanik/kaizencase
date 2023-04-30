@@ -3,7 +3,7 @@ Ardından http://localhost:8000/swagger/index.html üzerinden testlerinizi yapab
 
 # Case 1
 ------------------------
-------------------------
+
 ### Algoritma:
 - 5 haneli bir başlangıç değerine daha önce üretilmiş olan code sayısını ekleyerek başlıyoruz. Elde ettiğimiz int değerini Skip32 algoritmasını kullanarak 10 byte'lık bir key yardımı ile şifreliyoruz. Çıkan int değerini 22 tabanına çeviriyoruz. Çevirme işlemine başlarken Skip32'den elde ettiğimiz int değeri 0dan küçük mü bakıyoruz sıfırdan küçükse çevirme algoritması sonunda bulunan diğer karakterden değeri en büyük olanı bulup son hane olarak ekliyoruz. Değilse en küçüğü ekliyoruz. Çıkan sonuç 8 karakter değilse başına 23 karakterden ayırdığımız 1 karakteri (Ben 'A' karakterini kullandım) ekliyoruz. Decode işlemi içinde 'A' ları trimliyoruz. Signed karakteri çıkarıyoruz. Base22den tekrar int değere çevirip signed karakter varsa -1 le çarpıyoruz. Ardından Skip32 decrpt işlemi yapıp üretilmiş kod sayımızla karşılaştırıyoruz.
 ### Notlar:
@@ -14,7 +14,6 @@ Ardından http://localhost:8000/swagger/index.html üzerinden testlerinizi yapab
 
 
 # Case 2
-------------------------
 ------------------------
 
 ### Algoritma:
